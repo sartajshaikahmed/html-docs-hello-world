@@ -8,6 +8,13 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Pay-As-You-Go(0f09b099-be3c-4ff0-811b-91d495b4a6a4)'
+    appType: 'webApp'
+    WebAppName: 'sartajdevops3'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 
 steps:
 - script: echo Hello, world!
